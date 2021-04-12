@@ -53,6 +53,10 @@
 1. Press "F5" to open a Chrome window and then select your package to view todo list manager sample app.
     * For remote debug, you can choose the profile "Launch Remote (Edge)" or "Launch Remote(Chrome)" and press "F5".
 
+1. If you met the error that app cannot be added. You can go to [Teams admin center](https://admin.teams.microsoft.com/policies/app-setup/) and setup a new policy that enables "Upload custom apps".
+
+    ![CustomApp](images/CustomApp.jpg)
+
 ### How to use this Sample App:
 1. The app should be running like this, and you could click the start button:
 
