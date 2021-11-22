@@ -8,7 +8,6 @@ param qnAMakerHostUrl string
 
 var resourceBaseName = provisionParameters.resourceBaseName
 var botAadAppClientId = provisionParameters['botAadAppClientId']
-var botAadAppClientSecret = provisionParameters['botAadAppClientSecret']
 var botServiceName = contains(provisionParameters, 'botServiceName') ? provisionParameters['botServiceName'] : '${resourceBaseName}-bot-service'
 var botDisplayName = contains(provisionParameters, 'botDisplayName') ? provisionParameters['botDisplayName'] : '${resourceBaseName}-bot-displayname'
 var serverfarmsName = contains(provisionParameters, 'botServerfarmsName') ? provisionParameters['botServerfarmsName'] : '${resourceBaseName}-bot-serverfarms'
@@ -67,14 +66,6 @@ resource webApp 'Microsoft.Web/sites@2021-02-01' = {
     keyVaultReferenceIdentity: userAssignedIdentityId
     siteConfig: {
       appSettings: [
-        {
-          name: 'BOT_ID'
-          value: botAadAppClientId
-        }
-        {
-          name: 'BOT_PASSWORD'
-          value: botAadAppClientSecret
-        }
         {
           name: 'SCM_DO_BUILD_DURING_DEPLOYMENT'
           value: 'true'
